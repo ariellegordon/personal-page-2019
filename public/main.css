@@ -1,0 +1,51 @@
+body {
+  font-family: 'Cormorant', serif;
+  font-weight: bold;
+  color: black;
+}
+
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body a:hover {
+  color: pink;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(autofill, minmax(4, 1fr));
+}
+
+.sidebar {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  list-style-type: none;
+}
+
+.main {
+  grid-column-start: 2;
+  grid-column-end: span 3;
+}
+
+.icons {
+  padding-bottom: 2em;
+}
+
+.icons a {
+  padding-right: 3em;
+}
+
+.clips p {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  padding-top: 1em;
+}
+
+.multiple-clips {
+  margin-bottom: -10px;
+}
