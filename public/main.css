@@ -27,6 +27,7 @@ body a:hover {
 .main {
   grid-column-start: 2;
   grid-column-end: span 3;
+  padding-top: 1em;
 }
 
 .icons {
@@ -42,10 +43,59 @@ body a:hover {
   margin: 0;
 }
 
-.main {
-  padding-top: 1em;
-}
-
 .multiple-clips {
   margin-bottom: -10px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.project {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+}
+
+.project-inner {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  max-width: 20em;
+  width: 100%;
+  height: auto;
+}
+
+.project-inner:hover .image {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.project-inner:hover .overlay {
+  opacity: 1;
+}
+
+.mobile-image {
+  display: block;
+  max-width: 30em;
+  width: 100%;
+  height: auto;
+}
+
+.mobile-overlay {
 }

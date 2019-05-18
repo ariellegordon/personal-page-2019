@@ -4,6 +4,7 @@ import db from './Firebase';
 const Writing = () => {
   const [clips, setClips] = useState([]);
   useEffect(() => {
+    document.title = 'writing';
     async function fetchClips() {
       const myClips = await db.collection('writings').get();
       const clipArr = [];
@@ -13,11 +14,14 @@ const Writing = () => {
       setClips(clipArr);
     }
     fetchClips();
+    return () => {
+      document.title = 'arielle';
+    };
   }, []);
 
   return (
     <div className="main">
-      {clips.length &&
+      {clips.length > 0 &&
         clips
           .filter(clip => clip.publication !== 'Pitchfork')
           .map((clip, idx) => (
@@ -30,12 +34,12 @@ const Writing = () => {
               </a>
             </div>
           ))}
-      {clips.length && (
+      {clips.length > 0 && (
         <h3>
           <em>Pitchfork</em>
         </h3>
       )}
-      {clips.length &&
+      {clips.length > 0 &&
         clips
           .filter(clip => clip.publication === 'Pitchfork')
           .map((clip, idx) => (
